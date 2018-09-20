@@ -1,4 +1,5 @@
 import Shader from './Shader';
+import Mesh from './Mesh';
 
 class Engine {
     constructor(width, height) {
@@ -14,6 +15,10 @@ class Engine {
 
     initShader(vertexShaderSource, fragmentShaderSource) {
         return Shader.initShader(this.gl, vertexShaderSource, fragmentShaderSource);
+    }
+
+    createMesh(vertices, format) {
+        return Mesh.createMesh(this.gl, vertices, format);
     }
 
     render() {

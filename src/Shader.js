@@ -15,9 +15,21 @@ function loadShader(gl, type, source) {
 }
 
 class Shader {
+    static kAttribPosition = 'aPosition';
+    static kAttribNormal = 'aNormal';
+
     constructor(gl, program) {
         this.gl = gl;
         this.program = program;
+        this.attribs = {};
+    }
+
+    resolveAttrib(name) {
+      // TODO  const loc = this.gl.getAttribLocation()
+    }
+
+    getAttribLocation(name) {
+        return this.attribs[name];
     }
 
     destroy() {
@@ -63,3 +75,4 @@ class Shader {
 }
 
 export default Shader;
+
